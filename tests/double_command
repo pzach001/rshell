@@ -65,7 +65,7 @@ last hello
 hello
 invalid command: No such file or directory
 done
-($)echokhello||lkjlkj&&decho done
+($)echo hello||lkjlkj&&decho done
 hello
 done
 ($)ls

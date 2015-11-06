@@ -1,0 +1,15 @@
+script started on Fri 06 Nov 2015 02:30:40 PM PST
+g++.-std=c++0x-rshell.cppr-oea.outp -o a.out
+bash-4.1$ ./a.out
+($)exit
+bash-4.1$ ./a.out
+($)ls||exit
+a.out  before_commented_command	 before_exit_command  commented_command	 double_command	 rshell.cpp  single_command  testcheck
+($)ljlkj&&exit
+invalid command: No such file or directory
+($)ls
+a.out  before_commented_command	 before_exit_command  commented_command	 double_command	 rshell.cpp  single_command  testcheck
+($)exit
+cattbefore_exit_commandp|dperle-pe\'s/\e([^\[\]]|\[.*?[a-zA-Z]|\].*?\a)//g' | col -b >eexit_command
+bash-4.1$ vim exit_command
+▽  "exit_command" 1L, 1C~

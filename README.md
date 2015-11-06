@@ -16,5 +16,8 @@ $ bin/rshell
 
 
 limitation and bugs
+cannot comment if there are multiple spaces before, changes behavior of what being inputed into execvp 
+
+ex": "     #lakjkjaklja"
 currently cannot use cd
 size of command has a limit

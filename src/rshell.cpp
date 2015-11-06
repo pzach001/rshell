@@ -262,6 +262,10 @@ int main()
                        }
                     }
                 }
+                if(CharHolder=="#")
+                {
+
+                }
                 if(exitcheck == true)
                 {
                     break;
@@ -269,13 +273,13 @@ int main()
                 if(QueueForArguments.size()!=0 && SecondRoundFlag ==false&& exitcheck == false)
                 {
 
-                    cout << "go in " << endl;
+                    //cout << "go in " << endl;
                     HoldIfRan = DoCommand(CharHolder);
                     QueueForArguments.pop();
                 }
                 SecondRoundFlag = false;
             }
-            cout <<"came to the end" << endl;
+            //cout <<"came to the end" << endl;
             if(exitcheck == true)
             {
                 break;

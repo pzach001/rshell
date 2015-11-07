@@ -1,4 +1,4 @@
-flag  = -ansi -pedantic -Wall -Werrori
+flag = -Wall -Werror -ansi -pedantic -std=c++0x
 compilervar = g++
 all: rshell
 

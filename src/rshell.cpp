@@ -319,8 +319,4 @@ int main()
                 break;
             }
     }
-    if(exitcheck ==true)
-    {
-        exit(0);
-    }
 }

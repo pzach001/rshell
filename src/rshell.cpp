@@ -10,7 +10,7 @@ using namespace std;
 int DoCommand(string x)
 {
     string CharHolder = x;
-    pid_t c_pid, pid;
+    pid_t c_pid;
     int status;
     c_pid = fork();
     if( c_pid < 0)
@@ -26,7 +26,7 @@ int DoCommand(string x)
                 int x;
                 bool check = false;
                 bool wentintospaceCheck = false;
-                for(int i=0;i < CharHolder.size();i++)
+                for(unsigned int i=0;i < CharHolder.size();i++)
                 {
 
                     if(CharHolder.at(i)!=' ')
@@ -55,20 +55,20 @@ int DoCommand(string x)
                 }
                 else
                 {
-                    for(int j = x+1; j < CharHolder.size();j++)
+                    for(unsigned int j = x+1; j < CharHolder.size();j++)
                     {
                         ArgumentLoopHolder.push_back(CharHolder.at(j));
                     }
 
                 }
-                for(int i = 0; i < CommandArrayHolder.size(); i++)
+                for(unsigned int i = 0; i < CommandArrayHolder.size(); i++)
                 {
                     ExecCommandHold[i]=(CommandArrayHolder.at(i));
                 }
                 // checking to see if there are two words or one words in the command inputted
                 if(SingleArgumentCheck==false)
                 {
-                    for(int i = 0; i < ArgumentLoopHolder.size(); i++)
+                    for(unsigned int i = 0; i < ArgumentLoopHolder.size(); i++)
                     {
                         ExecArgumentHold[i]=(ArgumentLoopHolder.at(i));
                     }
@@ -111,6 +111,7 @@ int DoCommand(string x)
                  }
        }
    }
+  return 77;
 }
 int main()
 {
@@ -123,7 +124,7 @@ int main()
         string FullStringHolder;
         string queuestringHold;
 
-        int i =0;
+        int f =0;
         bool queuetest = false;
         cout << "($)";
         getline(cin,FullStringHolder);
@@ -134,12 +135,12 @@ int main()
         else
         {
             //checking to see if teh beginning char is a space
-            if(FullStringHolder.at(i)==' ')
+            if(FullStringHolder.at(f)==' ')
             {
-                i = i+1;
+                f = f+1;
             }
         }
-        for(i; i < FullStringHolder.size();i++)
+        for(unsigned int i= f; i < FullStringHolder.size();i++)
         {   
             //checking to see if it is a ;, if so that means you can push the current word stored at queuestringhold into the queue
             if( FullStringHolder.at(i) == ';')

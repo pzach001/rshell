@@ -46,8 +46,8 @@ int DoCommand(string x)
                     CommandArrayHolder= CommandLoopholder;
                 }
                 bool SingleArgumentCheck = false;
-                char ExecCommandHold[30] = {NULL};
-                char ExecArgumentHold[30] = {NULL};
+                char ExecCommandHold[30] = {};
+                char ExecArgumentHold[30] = {};
                 vector<char> ArgumentLoopHolder;
                 if(wentintospaceCheck == false)
                 {

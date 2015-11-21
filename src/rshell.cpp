@@ -13,8 +13,9 @@ int DoStat(string x, string flagstring)
     //cout << "current string in dostat function:"<< x << endl;
     //cout << "current flag:" << flagstring << endl; 
     //cout << "went inside function" << endl;
+    bool finalcheck = false;
     char HolderStat[100] ={};
-    for(int i =0; i <x.size(); i++)
+    for(unsigned int  i =0; i <x.size(); i++)
     {
        HolderStat[i]=x.at(i);
        //cout << " value at x:  " <<  HolderStat[i];
@@ -23,6 +24,7 @@ int DoStat(string x, string flagstring)
     struct stat buf;
     if(flagstring == "" || flagstring == "-e")
     {
+            finalcheck = true;
             if((stat(HolderStat,&buf) == 0 ))//&& //(S_ISDIR(buf.st_mode)) )
             {
                 //cout << " it was true" << endl;
@@ -36,7 +38,7 @@ int DoStat(string x, string flagstring)
     }
     if(flagstring == "-d")
     {
-        
+            finalcheck = true;   
             //cout << "went into here";
             if( ( (stat(HolderStat,&buf) == 0 ) ) && ( S_ISDIR(buf.st_mode) ) )
             {
@@ -52,6 +54,7 @@ int DoStat(string x, string flagstring)
     }
     if(flagstring == "-f")
     {
+            finalcheck = true;
             if( ((stat(HolderStat,&buf) == 0 )) && ( S_ISREG(buf.st_mode) ) )
             {
                 //cout << " it was true" << endl;
@@ -64,6 +67,11 @@ int DoStat(string x, string flagstring)
                     return 0;
             }   
     }
+    else
+    {
+      return 75;
+    }
+
 
     
     // (stat( x ,&buf) == 0 && S_ISREG(buf.st_mode));
@@ -179,7 +187,6 @@ int IndividualGroupCommandFunction( string x)
         string queuestringHold;
 
         int f = 0;
-        bool queuetest = false;
         //getting output string and im putting it into fullstringholder
         if(FullStringHolder.empty()){
         }
@@ -200,7 +207,6 @@ int IndividualGroupCommandFunction( string x)
                   i=i+1;
                 }
                 queuestringHold.clear();
-                queuetest=true;
             }
             //checking to see if it is a |, if so that means you can push the current word stored at queuestringhold into the queue
             if( FullStringHolder.at(i)== '|'){
@@ -211,7 +217,7 @@ int IndividualGroupCommandFunction( string x)
                 while(FullStringHolder.at(i)==' '){
                     i=i+1;
                 }
-                queuetest =true;
+
             }
             //checking to see if it is a &, if so that means you can push the current word stored at queuestringhold into the queue
             if(FullStringHolder.at(i) == '&'){
@@ -222,7 +228,6 @@ int IndividualGroupCommandFunction( string x)
                while(FullStringHolder.at(i) ==' '){
                    i=i+1;
                }
-               queuetest=true;
             }
             //checking to see if it is a '#', means that you can end the loop and that the queue is now stocked
             if(FullStringHolder.at(i)=='#'){
@@ -340,7 +345,7 @@ int IndividualGroupCommandFunction( string x)
                     {
                         //cout << "went into check if holdifran is 1" << endl;
                         outsidecheck = 1;
-                        wentin == true;
+                        wentin = true;
                     }
                     QueueForArguments.pop();
                 SecondRoundFlag = false;
@@ -362,8 +367,6 @@ int main()
         string FullStringHolder;
         string QueueStringHolder;
         bool parenthesischeck = false;
-        bool testbracketcheck = false;
-        bool firsttest = true;
         bool outsideofParenthesis = true;
         cout << "($)";
         getline(cin,FullStringHolder);
@@ -387,7 +390,6 @@ int main()
                     //cout << "went into / " << endl;
                     i = i+1;
                 }
-                firsttest = false;
             }
             if(FullStringHolder.at(i) =='[')
             {
@@ -404,8 +406,7 @@ int main()
                     //cout << "went into / " << endl;
                     i = i+1;
                 }
-                testbracketcheck = true;
-                firsttest = false;
+                
             }
             if(QueueStringHolder == "-e")
             {
@@ -458,7 +459,6 @@ int main()
                 i = i+1;
                 parenthesischeck = true;
                 outsideofParenthesis = false;
-                firsttest = false;
                 if(FullStringHolder.at(i) == ' ')
                 {
                     i = i+1;
@@ -555,7 +555,7 @@ int main()
         string CurrentQueueString;
         string flagstring = "";
         bool   testcheck = false;
-        bool   slashdoublecheck;
+        //bool   slashdoublecheck;
         int BeforeHold;
        // cout << " created teh quueue" << endl;
         while(!OverallCommandHold.empty()){

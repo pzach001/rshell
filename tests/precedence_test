@@ -1,0 +1,31 @@
+Script started on Fri 20 Nov 2015 04:59:02 PM PST
+[?1034hbash-4.1$ g++ -std=c++0x rshell.cpp -o a.out
+bash-4.1$ ./a.out
+($)(echo works)
+works
+($)echo works
+works
+($)(ls )    ) && (ls)
+a.out  precedence_test	rshell.cpp  test_command
+a.out  precedence_test	rshell.cpp  test_command
+($)(echo A && echo B) || (echo C && echo D)
+A 
+B
+($)(echo A && echo B) || )e  echo C
+A 
+B
+($)(Echo    echo A && echo B) || echo c   C && echo D
+A 
+B
+($)( echo A || (echoA && echo^[[D^[[D                  a A && echo B)
+A 
+($)echo A      (lakjdfkla;) || *e (    (echo A & echo B)
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::at
+Aborted
+bash-4.1$ ^C
+bash-4.1$ ^C
+bash-4.1$ exit
+exit
+
+Script done on Fri 20 Nov 2015 05:00:57 PM PST

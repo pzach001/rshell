@@ -1,0 +1,28 @@
+Script started on Fri 20 Nov 2015 04:55:17 PM PST
+[?1034hbash-4.1$ g++ -std=c++0x rshell.cpp -o a.out
+bash-4.1$ ./a.out
+($)9 { [ass   rshell.cpp]
+($)[rshell.cpp\ \ ] && ( echo works)
+works
+($)res  shell.cp         [lkjslkjs] & (echo works)
+($)[lkjlkj;] && (echo works)
+($)rs  [rshe     [rshell.cpp[ ] || (echo doesnt work)
+($)[rshel.cpp]            lja;jaljka} ] || echo works
+works
+($)t -e      test rshell.cpp && echo works
+works
+($)test rs  lkjlkjkj && echo doesn't work
+($)test lkjljkjk || echo works
+works
+($)test lkjlkjlkj ||              rshell.cpp || doesnt work
+($)tet 0   st 0 -e rshell.cpp && echo works
+works
+($)test 0e  -e lkajlkja  && echo works
+($)test 0 -e lkjlkjlkj || echo works
+works
+($)test 0d   -  -d MakedFile     file       akeFile &&      &7 & echo check
+($)exit    ^C
+bash-4.1$ eix[K[Kxit
+exit
+
+Script done on Fri 20 Nov 2015 04:58:44 PM PST

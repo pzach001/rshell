@@ -13,7 +13,7 @@ int DoStat(string x, string flagstring)
     //cout << "current string in dostat function:"<< x << endl;
     //cout << "current flag:" << flagstring << endl; 
     //cout << "went inside function" << endl;
-    bool finalcheck = false;
+   // bool finalcheck = false;
     char HolderStat[100] ={};
     for(unsigned int  i =0; i <x.size(); i++)
     {
@@ -24,7 +24,7 @@ int DoStat(string x, string flagstring)
     struct stat buf;
     if(flagstring == "" || flagstring == "-e")
     {
-            finalcheck = true;
+           // finalcheck = true;
             if((stat(HolderStat,&buf) == 0 ))//&& //(S_ISDIR(buf.st_mode)) )
             {
                 //cout << " it was true" << endl;
@@ -38,7 +38,7 @@ int DoStat(string x, string flagstring)
     }
     if(flagstring == "-d")
     {
-            finalcheck = true;   
+            //finalcheck = true;   
             //cout << "went into here";
             if( ( (stat(HolderStat,&buf) == 0 ) ) && ( S_ISDIR(buf.st_mode) ) )
             {
@@ -54,7 +54,7 @@ int DoStat(string x, string flagstring)
     }
     if(flagstring == "-f")
     {
-            finalcheck = true;
+            //finalcheck = true;
             if( ((stat(HolderStat,&buf) == 0 )) && ( S_ISREG(buf.st_mode) ) )
             {
                 //cout << " it was true" << endl;

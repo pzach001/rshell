@@ -25,6 +25,7 @@ Install Instructions:
 
 
 Limitation and Bugs: 
+
     -cannot comment if there are multiple spaces before the command, changes behavior of what being inputed into execvp.
     -ex": "     #lakjkjaklja"
     -currently cannot use cd. 

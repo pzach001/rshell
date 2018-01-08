@@ -6,8 +6,11 @@ What is Rshell?
  Rshell is a simple shell. It takes in basic bash commands.
  the commands that i provides are :
      1. "ls"
+
      2. "echo"
+
      3. "mkdir"
+
  Rshell also provides basic command connector functionality:
      ex) (echo "hi" &&  ls) || ls
 

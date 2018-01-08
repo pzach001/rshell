@@ -158,7 +158,7 @@ int DoCommand(string x)
 
     }
      else if (c_pid > 0){
-         while(waitpid(-1,&status,0) != c_pid);{
+         while(waitpid(-1,&status,0) != c_pid){
              //checking for outcome of whether or not child worked.
              if( WIFEXITED(status)){
                  if (WIFEXITED(status)==0){
